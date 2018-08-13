@@ -1,0 +1,85 @@
+@import '../node_modules/uikit/src/less/uikit';
+@import './uikit/_import';
+
+@import './flow-planning';
+
+//user block in chat-window
+.tfh-user-last-read {
+  background: @global-muted-background;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
+
+//unread messages in navbar
+.uk-navbar-subtitle .uk-badge {
+  min-width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 0.6rem;
+}
+
+//chat window switcher
+.tfh-switcher {
+  padding: 0;
+  list-style: none;
+  position: relative;
+  & > * {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+//multi-select nav
+.tfh-multi-select {
+  margin-top: 0 !important;
+  li.uk-active {
+    background: @global-muted-background;
+  }
+}
+
+//calendar month-nav
+.tfh-month-nav > li:not(.uk-active) {
+  display: none;
+}
+
+//vue transitions
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+//admin
+.tfh-debug-list {
+  padding: 0;
+  list-style: none;
+  font-family: @base-pre-font-family;
+  font-size: @base-pre-font-size;
+  height: 70vh;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px; /* for vertical scrollbars */
+    height: 12px; /* for horizontal scrollbars */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-corner  {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+//mobile adjustments
+/* Phone landscape and smalles */
+@media (max-width: @breakpoint-xsmall-max) {
+  .tfh-flowcalendar-day .uk-label {
+    white-space: normal;
+  }
+}

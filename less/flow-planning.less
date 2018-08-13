@@ -1,0 +1,121 @@
+@flow-planning-background-placeholder: #e4e4e4;
+@flow-planning-background-weekend: #d0d0d0;
+@flow-planning-calendar-background: #fff;
+@flow-planning-task-background: #f1f1f1;
+@flow-planning-task-active-background: #e7e7e7;
+@flow-planning-month-title-background: #6b6b6b;
+@flow-planning-active-border: #aaaaaa;
+@flow-planning-border: #e7e7e7;
+@flow-planning-today-border: #ed3e4f;
+@flow-planning-padding: 25px;
+
+.tfh-flowcalendar-scrollcontainer {
+  height: ~'calc(100vh - 80px)';;
+  overflow: scroll;
+}
+
+.tfh-flowcalendar-month-title {
+  background: @flow-planning-month-title-background;
+  color: #fff;
+  margin: 0;
+  padding: 5px 10px;
+}
+.tfh-flowcalendar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tfh-flowcalendar-day {
+  border-bottom: 1px solid @flow-planning-border;
+  padding: 0 5px;
+  min-height: 50px;
+  .tfh-flowcalendar-day-title {
+    margin: 0;
+  }
+  .tfh-flowcalendar-day-title-date {
+    width: 40px;
+    text-align: right;
+  }
+}
+
+.tfh-flowcalendar-day-placeholder {
+  background: @flow-planning-background-placeholder;
+  .tfh-flowcalendar-day-title {
+    color: @flow-planning-background-weekend;
+  }
+}
+
+.tfh-flowcalendar-day-hastasks, .tfh-flowcalendar-day-milestone {
+  .tfh-flowcalendar-day-title {
+    font-weight: bold;
+  }
+}
+
+.tfh-flowcalendar-day-weekend:not(.tfh-flowcalendar-day-placeholder) {
+  background: @flow-planning-background-weekend;
+}
+
+.tfh-flowcalendar-day-today {
+  border: 3px solid @flow-planning-today-border;
+}
+
+.tfh-flowcalendar-task {
+  border: 1px solid @flow-planning-border;
+  background: @flow-planning-task-background;
+  padding: 5px;
+  margin-bottom: 5px;
+  .tfh-flowcalendar-task-title {
+    margin: 0;
+  }
+}
+.uk-sortable>.tfh-flowcalendar-task:last-child {
+  margin-bottom: 5px;
+}
+
+
+.tfh-flowcalendar-task + .tfh-flowcalendar-task {
+    margin-top: 5px;
+}
+
+.tfh-flowcalendar-task-new {
+  opacity: 0.5;
+}
+.tfh-flowcalendar-task-active {
+  border: 1px solid @flow-planning-active-border;
+  background: @flow-planning-task-active-background;
+}
+
+.tfh-flowcalendar-container {
+  //flex the horizontal modifier
+  &.tfh-calendar-horizontal {
+    .uk-flex;
+    & > div {
+      .uk-flex;
+    }
+    .tfh-flowcalendar-list {
+      .uk-flex;
+    }
+  }
+
+  .uk-sortable {
+    margin: 5px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .uk-sortable-empty {
+    min-height: 5px;
+    margin-bottom: 5px;
+  }
+  .uk-sortable-placeholder {
+    opacity: 0.3;
+  }
+}
+
+.uk-sortable-moving .tfh-flowcalendar-container .uk-sortable-empty {
+  border: 1px dashed @flow-planning-border;
+  background: @flow-planning-task-background;
+}
+//direct child of body
+.uk-sortable-dragged.tfh-flowcalendar-task {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+}

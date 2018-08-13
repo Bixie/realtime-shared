@@ -1,0 +1,24 @@
+//
+// Component: Width
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-width-misc() {
+  //needed for calendar
+  .uk-child-width-1-7 > * { width: ~'calc(100% * 1 / 7.001)'; }
+  /* Phone landscape and bigger */
+  @media (min-width: @breakpoint-small) {
+    .uk-child-width-1-7\@s > * { width: ~'calc(100% * 1 / 7.001)'; }
+  }
+
+  .uk-width-mini { width: 100px; }
+
+}

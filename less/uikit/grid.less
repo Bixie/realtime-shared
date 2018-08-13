@@ -1,0 +1,25 @@
+//
+// Component: Grid
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+@grid-mini-gutter-horizontal: 5px;
+@grid-mini-gutter-vertical: 5px;
+// Miscellaneous
+// ========================================================================
+
+.hook-grid-misc() {
+
+  /* Horizontal */
+  .uk-grid-mini { margin-left: -@grid-mini-gutter-horizontal; }
+  .uk-grid-mini > * { padding-left: @grid-mini-gutter-horizontal; }
+
+  /* Vertical */
+  .uk-grid + .uk-grid-mini,
+  .uk-grid-mini > .uk-grid-margin,
+  * + .uk-grid-margin-mini { margin-top: @grid-mini-gutter-vertical; }
+
+}
